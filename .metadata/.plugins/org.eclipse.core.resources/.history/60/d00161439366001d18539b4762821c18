@@ -1,0 +1,48 @@
+package kemalkeskin.libary.business.concretes;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import kemalkeskin.libary.business.abstracts.BookService;
+import kemalkeskin.libary.dataAccess.abstracts.BookRepository;
+import kemalkeskin.libary.entities.concretes.Book;
+import lombok.AllArgsConstructor;
+@Service
+@AllArgsConstructor
+public class BookManager implements BookService {
+	
+	private BookRepository bookRepository;
+
+	@Override
+	public Optional<List<Book>> getAll() {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Book getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Book add(Book book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Book Update(Book book, int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

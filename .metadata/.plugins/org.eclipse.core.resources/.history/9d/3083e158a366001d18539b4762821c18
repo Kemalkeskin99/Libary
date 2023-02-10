@@ -1,0 +1,64 @@
+package kemalkeskin.libary.business.concretes;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+
+import kemalkeskin.libary.business.abstracts.BookService;
+import kemalkeskin.libary.dataAccess.abstracts.BookRepository;
+import kemalkeskin.libary.entities.concretes.Book;
+import lombok.AllArgsConstructor;
+@Service
+@AllArgsConstructor
+public class BookManager implements BookService {
+	
+	private BookRepository bookRepository;
+
+	@Override
+	public List<Book> getAll() {
+	
+		List<Book> book=bookRepository.findAll();
+		if(book.isEmpty()) {
+			return null;
+		}
+		
+		return book;
+	}
+
+	@Override
+	public Book getById(int id) {
+		Optional<Book>book=bookRepository.findById(id);
+		if(book.isPresent()) {
+			return getById(id);
+		}
+		return book.orElse(null);
+	}
+
+	@Override
+	public Book add(Book book) {
+		
+	return bookRepository.save(book);
+	}
+
+	@Override
+	public Book Update(Book book, int id) {
+		Optional<Book>book1=bookRepository.findById(id);
+		if(book1.isPresent()) {
+			Book book2=book1.get();
+			book.setName(book2.getName());
+			book.setPrice(book2.getPrice());
+			return add(book);
+		}
+	
+		return null;
+	}
+
+	@Override
+	public void delete(int id) {
+		this.bookRepository.deleteById(id);
+		
+	}
+
+}

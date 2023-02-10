@@ -1,0 +1,15 @@
+package kemalkeskin.libary.business.abstracts;
+
+import java.util.List;
+
+import kemalkeskin.libary.entities.concretes.Author;
+
+
+public interface AuthorService {
+	List<Author>getAll();
+	Author getById(int id);
+	Author add(Author author);
+	Author Update(Author author,int id);
+	void delete(int id);
+
+}

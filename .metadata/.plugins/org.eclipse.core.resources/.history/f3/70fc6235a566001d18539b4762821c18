@@ -1,0 +1,59 @@
+package kemalkeskin.libary.business.concretes;
+
+import java.util.List;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import kemalkeskin.libary.business.abstracts.AuthorService;
+import kemalkeskin.libary.dataAccess.abstracts.AuthorRepository;
+import kemalkeskin.libary.entities.concretes.Author;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+@Service
+@Data
+@AllArgsConstructor
+
+public class AuthorManager implements AuthorService{
+	
+	private AuthorRepository authorRepository;
+
+	@Override
+	public List<Author> getAll() {
+		List<Author>author=authorRepository.findAll();
+		if(author.isEmpty()) {
+			return author;
+			
+		}
+		return null;
+	}
+
+	@Override
+	public Author getById(int id) {
+		Optional<Author> author=authorRepository.findById(id);
+		if(author.isPresent()) {
+			return author.get();
+		}
+		return null;
+	}
+
+	@Override
+	public Author add(Author author) {
+	return authorRepository.save(author);
+	
+	}
+
+	@Override
+	public Author Update(Author author, int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

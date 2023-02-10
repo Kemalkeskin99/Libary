@@ -1,0 +1,5 @@
+package kemalkeskin.libary.business.concretes;
+
+public class BookManager {
+
+}

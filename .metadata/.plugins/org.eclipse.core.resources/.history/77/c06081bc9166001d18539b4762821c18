@@ -1,0 +1,10 @@
+package kemalkeskin.libary.business.abstracts;
+
+import kemalkeskin.libary.entities.concretes.Book;
+
+public interface BookService {
+	
+	Book add(Book book);
+	Book Update(Book book,int id);
+
+}

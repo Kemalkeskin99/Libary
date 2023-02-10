@@ -1,0 +1,16 @@
+package kemalkeskin.libary.business.abstracts;
+
+import java.util.List;
+
+
+import kemalkeskin.libary.entities.concretes.Book;
+
+public interface BookService {
+	
+	List<Book>getAll();
+	Book getById(int id);
+	Book add(Book book);
+	Book Update(Book book,int id);
+	void delete(int id);
+
+}

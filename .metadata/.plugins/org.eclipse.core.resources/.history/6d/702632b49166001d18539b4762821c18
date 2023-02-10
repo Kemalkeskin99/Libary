@@ -1,0 +1,5 @@
+package kemalkeskin.libary.business.abstracts;
+
+public interface BookService {
+
+}

@@ -1,0 +1,5 @@
+package kemalkeskin.libary.entities.concretes;
+
+public class Author {
+
+}
